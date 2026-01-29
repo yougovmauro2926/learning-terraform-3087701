@@ -44,7 +44,7 @@ resource "aws_instance" "blog" {
   }
 }
 
-subnet_id = module.blog_vpc.public_subnets{0}
+  subnet_id = module.blog_vpc.public_subnets[0]
 
 resource "aws_security_group" "blog" {
   name        = "blog"
