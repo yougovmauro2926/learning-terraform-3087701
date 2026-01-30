@@ -14,7 +14,7 @@ data "aws_ami" "app_ami" {
   owners = ["979382823631"] # Bitnami
 }
 
-
+  
 module "blog_vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
@@ -115,7 +115,7 @@ module "blog_autoscaling" {
 
   vpc_zone_identifier = module.blog_vpc.public_subnets
 
-  launch_tamplate_name = "blog"
+  launch_template_name = "blog"
 }
   security_groups      = [module.blog_sg.security_group_id]
   instance_type        = var.instance_type
